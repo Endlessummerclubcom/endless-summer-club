@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESC — Logo & Icon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #EDE4D7;
+      --merlot: #5C1420;
+      --muted:  #9a8a80;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      gap: 80px;
+    }
+
+    /* ── LABELS ── */
+    .label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    /* ── LOGO ── */
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      line-height: 1;
+    }
+
+    .logo-endless {
+      font-family: 'Great Vibes', cursive;
+      font-size: 68px;
+      color: var(--merlot);
+      line-height: 1.1;
+      margin-bottom: -8px;
+    }
+
+    .logo-summer {
+      font-family: 'Great Vibes', cursive;
+      font-size: 108px;
+      color: var(--merlot);
+      line-height: 0.9;
+    }
+
+    .logo-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--merlot);
+      opacity: 0.3;
+      margin: 18px 0 16px;
+    }
+
+    .logo-club {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--merlot);
+      padding-left: 0.55em; /* offset for letter-spacing */
+    }
+
+    /* ── DIVIDER BETWEEN SECTIONS ── */
+    .section-divider {
+      width: 1px;
+      height: 60px;
+      background: var(--merlot);
+      opacity: 0.15;
+    }
+
+    /* ── ICON / MONOGRAM ── */
+    .icon-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .monogram {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      color: var(--merlot);
+      line-height: 1;
+    }
+
+    .mono-E {
+      font-family: 'Great Vibes', cursive;
+      font-size: 160px;
+      color: var(--merlot);
+      line-height: 1;
+      margin-right: -18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mono-SC {
+      font-family: 'Great Vibes', cursive;
+      font-size: 100px;
+      color: var(--merlot);
+      line-height: 1;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── EXPORT ROW ── */
+    .export-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 60px;
+    }
+
+    .btn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--merlot);
+      border: 1px solid rgba(92,20,32,0.35);
+      background: transparent;
+      padding: 10px 22px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--merlot);
+      color: var(--bg);
+    }
+
+    /* ── PRINT / EXPORT ── */
+    @media print {
+      body { padding: 0; }
+      .export-row { display: none; }
+    }
+
+    /* ── GRID: side by side on wider screens ── */
+    .main-grid {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+    }
+
+    @media (max-width: 700px) {
+      .main-grid {
+        flex-direction: column;
+        gap: 60px;
+      }
+      .section-divider {
+        width: 60px;
+        height: 1px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-grid">
+
+    <!-- LOGO -->
+    <div class="logo-wrap">
+      <p class="label">Logo</p>
+      <div class="logo">
+        <span class="logo-endless">Endless</span>
+        <span class="logo-summer">Summer</span>
+        <div class="logo-rule"></div>
+        <span class="logo-club">Club</span>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ICON -->
+    <div class="icon-wrap">
+      <p class="label">Ikona</p>
+      <div class="monogram">
+        <span class="mono-E">E</span><span class="mono-SC">sc</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="export-row">
+    <button class="btn" onclick="window.print()">Zapisz jako PDF</button>
+    <button class="btn" onclick="screenshot()">Instrukcja PNG</button>
+  </div>
+
+  <script>
+    function screenshot() {
+      alert('Aby zapisać jako PNG:\n\n1. Zrób screenshot strony (Cmd+Shift+4 na Mac)\n2. Lub użyj narzędzia Snagit / CleanMyMac Screenshots\n3. Plik można też otworzyć w Figma i wyeksportować jako SVG')
+    }
+  </script>
+
+</body>
+</html>
